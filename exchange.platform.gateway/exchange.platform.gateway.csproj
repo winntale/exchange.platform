@@ -4,6 +4,18 @@
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>exchange.platform</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Implementations\exchange.platform.binance\exchange.platform.binance.csproj" />
+      <ProjectReference Include="..\Implementations\exchange.platform.bybit\exchange.platform.bybit.csproj" />
+      <ProjectReference Include="..\Implementations\exchange.platform.core\exchange.platform.core.csproj" />
+      <ProjectReference Include="..\Implementations\exchange.platform.okx\exchange.platform.okx.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="16.0.0" />
+    </ItemGroup>
 
 </Project>

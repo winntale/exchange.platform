@@ -1,6 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform", "exchange.platform\exchange.platform.csproj", "{6133D2B0-A8E7-473B-AADA-642B60B487AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.gateway", "exchange.platform.gateway\exchange.platform.gateway.csproj", "{6133D2B0-A8E7-473B-AADA-642B60B487AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{D5A9465E-0F2B-4D37-BE26-5B17CEA5E9B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{C41D9115-D4B1-44C7-8BC6-989E7C70436B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.core.abstractions", "Abstractions\exchange.platform.core.abstractions\exchange.platform.core.abstractions.csproj", "{CD11713C-14F7-42E1-A39C-51F2B5B17192}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.core", "Implementations\exchange.platform.core\exchange.platform.core.csproj", "{5256B70B-2736-476D-907D-68E4EB374E10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.binance", "Implementations\exchange.platform.binance\exchange.platform.binance.csproj", "{E56135B1-5FB3-4F11-8A6F-3AF35F2AE186}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.bybit", "Implementations\exchange.platform.bybit\exchange.platform.bybit.csproj", "{17B246E4-5C60-402F-9D54-0F6D41F9AD4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.okx", "Implementations\exchange.platform.okx\exchange.platform.okx.csproj", "{0CB7C958-E129-497F-952C-65D220EEA0F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.dal.abstractions", "Abstractions\exchange.platform.dal.abstractions\exchange.platform.dal.abstractions.csproj", "{B94A9A70-F1D0-4F16-8DD8-D8B0D2F11EC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.clients.abstractions", "Abstractions\exchange.platform.clients.abstractions\exchange.platform.clients.abstractions.csproj", "{D0E73AAB-3E8E-41D3-98E5-E7FF586D95F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exchange.platform.dal", "Implementations\exchange.platform.dal\exchange.platform.dal.csproj", "{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +32,47 @@ Global
 		{6133D2B0-A8E7-473B-AADA-642B60B487AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6133D2B0-A8E7-473B-AADA-642B60B487AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6133D2B0-A8E7-473B-AADA-642B60B487AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD11713C-14F7-42E1-A39C-51F2B5B17192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD11713C-14F7-42E1-A39C-51F2B5B17192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD11713C-14F7-42E1-A39C-51F2B5B17192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD11713C-14F7-42E1-A39C-51F2B5B17192}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5256B70B-2736-476D-907D-68E4EB374E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5256B70B-2736-476D-907D-68E4EB374E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5256B70B-2736-476D-907D-68E4EB374E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5256B70B-2736-476D-907D-68E4EB374E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E56135B1-5FB3-4F11-8A6F-3AF35F2AE186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56135B1-5FB3-4F11-8A6F-3AF35F2AE186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56135B1-5FB3-4F11-8A6F-3AF35F2AE186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56135B1-5FB3-4F11-8A6F-3AF35F2AE186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17B246E4-5C60-402F-9D54-0F6D41F9AD4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17B246E4-5C60-402F-9D54-0F6D41F9AD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17B246E4-5C60-402F-9D54-0F6D41F9AD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17B246E4-5C60-402F-9D54-0F6D41F9AD4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CB7C958-E129-497F-952C-65D220EEA0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CB7C958-E129-497F-952C-65D220EEA0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CB7C958-E129-497F-952C-65D220EEA0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CB7C958-E129-497F-952C-65D220EEA0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B94A9A70-F1D0-4F16-8DD8-D8B0D2F11EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94A9A70-F1D0-4F16-8DD8-D8B0D2F11EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94A9A70-F1D0-4F16-8DD8-D8B0D2F11EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94A9A70-F1D0-4F16-8DD8-D8B0D2F11EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0E73AAB-3E8E-41D3-98E5-E7FF586D95F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E73AAB-3E8E-41D3-98E5-E7FF586D95F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0E73AAB-3E8E-41D3-98E5-E7FF586D95F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0E73AAB-3E8E-41D3-98E5-E7FF586D95F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CD11713C-14F7-42E1-A39C-51F2B5B17192} = {D5A9465E-0F2B-4D37-BE26-5B17CEA5E9B4}
+		{5256B70B-2736-476D-907D-68E4EB374E10} = {C41D9115-D4B1-44C7-8BC6-989E7C70436B}
+		{E56135B1-5FB3-4F11-8A6F-3AF35F2AE186} = {C41D9115-D4B1-44C7-8BC6-989E7C70436B}
+		{17B246E4-5C60-402F-9D54-0F6D41F9AD4F} = {C41D9115-D4B1-44C7-8BC6-989E7C70436B}
+		{0CB7C958-E129-497F-952C-65D220EEA0F6} = {C41D9115-D4B1-44C7-8BC6-989E7C70436B}
+		{B94A9A70-F1D0-4F16-8DD8-D8B0D2F11EC9} = {D5A9465E-0F2B-4D37-BE26-5B17CEA5E9B4}
+		{D0E73AAB-3E8E-41D3-98E5-E7FF586D95F2} = {D5A9465E-0F2B-4D37-BE26-5B17CEA5E9B4}
+		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98} = {C41D9115-D4B1-44C7-8BC6-989E7C70436B}
 	EndGlobalSection
 EndGlobal
