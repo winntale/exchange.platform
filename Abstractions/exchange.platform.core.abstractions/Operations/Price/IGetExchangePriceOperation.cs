@@ -2,9 +2,9 @@ using exchange.platform.abstractions.Operations.Queries;
 
 namespace exchange.platform.abstractions.Operations.Price;
 
-public interface IPriceOperations
+public interface IGetExchangePriceOperation
 {
-    Task<int> Get(
-        GetPriceQuery query,
+    Task<decimal> GetPriceAsync(
+        GetExchangePriceQuery query,
         CancellationToken ct);
 }

@@ -1,5 +1,5 @@
 ﻿namespace exchange.platform.dal;
 
-public class Class1
+public class ServicesConfiguration
 {
 }

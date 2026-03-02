@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Abstractions\exchange.platform.clients.abstractions\exchange.platform.clients.abstractions.csproj" />
       <ProjectReference Include="..\..\Abstractions\exchange.platform.core.abstractions\exchange.platform.core.abstractions.csproj" />
     </ItemGroup>
 

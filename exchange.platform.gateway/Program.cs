@@ -1,7 +1,22 @@
+using exchange.platform.binance;
+using exchange.platform.Configurations;
+using exchange.platform.core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// clients
+builder.Services.ConfigureBinanceServices();
+
+// core
+builder.Services.ConfigureCoreServices();
+
+// gateway
+builder.Services.ConfigureAutoMapper();
+builder.Services.ConfigureServices();
+builder.Services.ConfigureSwaggerServices();
 
 var app = builder.Build();
 

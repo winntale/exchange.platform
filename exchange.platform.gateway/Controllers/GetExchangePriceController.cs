@@ -8,18 +8,18 @@ namespace exchange.platform.Controllers;
 
 [ApiController]
 [Route("api/price")]
-public sealed class PriceController(IMapper mapper)
+public sealed class GetExchangePriceController(IMapper mapper)
     : ControllerBase
 {
     [HttpGet]
     public async Task<ActionResult<int>> Get(
-        [FromServices] IPriceOperations process,
+        [FromServices] IGetExchangePriceOperation process,
         [FromQuery] PriceDto requestModel,
         CancellationToken ct)
     {
-        var queryModel = mapper.Map<GetPriceQuery>(requestModel);
+        var queryModel = mapper.Map<GetExchangePriceQuery>(requestModel);
 
-        var result = await process.Get(queryModel, ct);
+        var result = await process.GetPriceAsync(queryModel, ct);
         return Ok(result);
     }
 }
