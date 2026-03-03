@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>exchange.platform</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Implementations\Binance\Binance.csproj" />
+      <ProjectReference Include="..\Implementations\Bybit\Bybit.csproj" />
+      <ProjectReference Include="..\Implementations\Core\Core.csproj" />
+      <ProjectReference Include="..\Implementations\Okx\Okx.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="16.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.4" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.1.4" />
+    </ItemGroup>
+
+</Project>
