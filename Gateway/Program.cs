@@ -15,10 +15,13 @@ builder.Services.ConfigureCoreServices();
 
 // gateway
 builder.Services.ConfigureAutoMapper();
+
 builder.Services.ConfigureServices();
 builder.Services.ConfigureSwaggerServices();
 
 var app = builder.Build();
+
+app.Services.ValidateMapperProfiles();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

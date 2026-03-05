@@ -1,3 +1,5 @@
+using AutoMapper;
+
 namespace exchange.platform.Configurations;
 
 public static class AutoMapperConfiguration
@@ -8,5 +10,12 @@ public static class AutoMapperConfiguration
         {
             mc.ConfigureGatewayProfiles();
         });
+    }
+
+    public static void ValidateMapperProfiles(this IServiceProvider serviceProvider)
+    {
+        serviceProvider.GetRequiredService<IMapper>()
+            .ConfigurationProvider
+            .AssertConfigurationIsValid();
     }
 }

@@ -8,11 +8,9 @@ public static class ServicesConfiguration
 {
     public static void ConfigureBinanceServices(this IServiceCollection services)
     {
-        services.AddHttpClient<BinancePriceProvider>(client =>
+        services.AddHttpClient<IExchangePriceProvider, BinancePriceProvider>(client =>
         {
             client.BaseAddress = new Uri("https://api.binance.com");
         });
-        
-        services.AddScoped<IExchangePriceProvider, BinancePriceProvider>();
     }
 }
