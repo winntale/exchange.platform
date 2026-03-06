@@ -10,18 +10,14 @@ internal sealed class BinancePriceProvider(HttpClient client) : IExchangePricePr
 {
     public string ExchangeName => "binance";
     
-    public async Task<decimal> GetPriceAsync(string symbol, CancellationToken ct)
+    public async Task<decimal?> GetPriceAsync(string symbol, CancellationToken ct)
     {
         var response = await client.GetAsync($"/api/v3/ticker/price?symbol={symbol}", ct);
         response.EnsureSuccessStatusCode();
         
-        var binanceModel = await response.Content.ReadFromJsonAsync<ExchangePriceBinanceModel>(cancellationToken: ct);
-        decimal price = 0;
-        
-        if (binanceModel != null)
-        {
-            price = binanceModel.Price;
-        }
+        var binanceModel = await response.Content.ReadFromJsonAsync<ExchangePriceModel>(cancellationToken: ct);
+
+        var price = binanceModel?.Price;
         
         return price;
     }

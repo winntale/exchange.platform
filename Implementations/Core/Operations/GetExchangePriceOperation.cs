@@ -25,10 +25,13 @@ internal sealed class GetExchangePriceOperation(
         
         var price = await provider.GetPriceAsync(operationModel.PairName, ct);
 
-        var model = mapper.Map<ExchangePriceOperationModel>(operationModel) with
+        if (price is null)
         {
-            Price = price
-        };
+            return Error.NotFound(
+                $"Error getting price for '{operationModel.PairName}' on '{operationModel.ExchangeName}' exchange");
+        }
+
+        var model = new ExchangePriceOperationModel { Price = price.Value };
 
         return Result<ExchangePriceOperationModel>.Success(model);
     }

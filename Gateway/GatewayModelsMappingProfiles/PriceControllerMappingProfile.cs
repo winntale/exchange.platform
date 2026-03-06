@@ -4,7 +4,7 @@ using exchange.platform.Models;
 
 namespace exchange.platform.GatewayModelsMappingProfiles;
 
-public sealed class PriceControllerMappingProfile : Profile
+internal sealed class PriceControllerMappingProfile : Profile
 {
     public PriceControllerMappingProfile()
     {
