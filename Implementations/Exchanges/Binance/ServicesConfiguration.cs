@@ -12,5 +12,6 @@ public static class ServicesConfiguration
         {
             client.BaseAddress = new Uri("https://api.binance.com");
         });
+        
     }
 }

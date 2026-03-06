@@ -31,6 +31,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// swagger
+app.ConfigureSwaggerPipeline();
+
 app.UseHttpsRedirection();
 app.UseRouting();
 

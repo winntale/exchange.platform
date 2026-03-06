@@ -13,18 +13,22 @@ public sealed class GetExchangePriceController(IMapper mapper)
     : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<decimal>> Get(
+    public async Task<ActionResult<ExchangePriceDto>> Get(
         [FromServices] IGetExchangePriceOperation process,
-        [FromQuery] PriceDto requestModel,
+        [FromQuery] GetExchangePriceDto requestModel,
         CancellationToken ct)
     {
-        var queryModel = mapper.Map<GetExchangePriceQuery>(requestModel);
+        var operationModel = mapper.Map<GetExchangePriceOperationModel>(requestModel);
 
-        var result = await process.GetPriceAsync(queryModel, ct);
+        var result = await process.GetExchangePriceAsync(operationModel, ct);
 
-        if (result.IsSuccess)
-            return Ok(result.Value);
+        if (result.IsFailure)
+        {
+            return result.Error.ToResponse();
+        }
 
-        return result.Error.ToResponse();
+        var value = mapper.Map<ExchangePriceDto>(result.Value);
+        return Ok(value);
+
     }
 }

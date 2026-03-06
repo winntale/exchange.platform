@@ -1,3 +1,4 @@
+using AutoMapper;
 using Core.Abstractions;
 using Core.Abstractions.Operations.Price;
 using Core.Abstractions.Operations.Price.Queries;
@@ -5,21 +6,31 @@ using exchange.platform.clients.abstractions.Providers;
 
 namespace exchange.platform.core.Operations;
 
-public class GetExchangePriceOperation(IEnumerable<IExchangePriceProvider> providers)
+internal sealed class GetExchangePriceOperation(
+    IEnumerable<IExchangePriceProvider> providers,
+    IMapper mapper)
     : IGetExchangePriceOperation
 {
-    public async Task<Result<decimal>> GetPriceAsync(GetExchangePriceQuery query, CancellationToken ct)
+    public async Task<Result<ExchangePriceOperationModel>> GetExchangePriceAsync(
+        GetExchangePriceOperationModel operationModel,
+        CancellationToken ct)
     {
-        var provider = providers.FirstOrDefault(p => p.ExchangeName == query.ExchangeName);
+        var provider = providers.FirstOrDefault(p =>
+            string.Equals(p.ExchangeName, operationModel.ExchangeName, StringComparison.OrdinalIgnoreCase));
 
         if (provider is null)
         {
-            return 0;
+            return Error.NotFound($"Exchange '{operationModel.ExchangeName} is not supported");
         }
         
-        var result = await provider.GetPriceAsync(query.PairName, ct);
+        var price = await provider.GetPriceAsync(operationModel.PairName, ct);
 
-        return result;
+        var model = mapper.Map<ExchangePriceOperationModel>(operationModel) with
+        {
+            Price = price
+        };
+
+        return Result<ExchangePriceOperationModel>.Success(model);
     }
 
 }

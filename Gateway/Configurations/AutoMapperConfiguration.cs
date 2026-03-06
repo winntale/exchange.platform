@@ -1,4 +1,5 @@
 using AutoMapper;
+using exchange.platform.core;
 
 namespace exchange.platform.Configurations;
 
@@ -9,6 +10,7 @@ public static class AutoMapperConfiguration
         services.AddAutoMapper(mc =>
         {
             mc.ConfigureGatewayProfiles();
+            mc.ConfigureCoreProfiles();
         });
     }
 

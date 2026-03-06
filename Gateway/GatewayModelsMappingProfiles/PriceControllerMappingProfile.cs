@@ -8,6 +8,7 @@ public sealed class PriceControllerMappingProfile : Profile
 {
     public PriceControllerMappingProfile()
     {
-        CreateMap<PriceDto, GetExchangePriceQuery>();
+        CreateMap<GetExchangePriceDto, GetExchangePriceOperationModel>();
+        CreateMap<ExchangePriceOperationModel, ExchangePriceDto>();
     }
 }

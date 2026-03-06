@@ -8,10 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Implementations\Binance\Binance.csproj" />
-      <ProjectReference Include="..\Implementations\Bybit\Bybit.csproj" />
       <ProjectReference Include="..\Implementations\Core\Core.csproj" />
-      <ProjectReference Include="..\Implementations\Okx\Okx.csproj" />
+      <ProjectReference Include="..\Implementations\Dal\Dal.csproj" />
+      <ProjectReference Include="..\Implementations\Exchanges\Binance\Binance.csproj" />
+      <ProjectReference Include="..\Implementations\Exchanges\Bybit\Bybit.csproj" />
+      <ProjectReference Include="..\Implementations\Exchanges\Okx\Okx.csproj" />
     </ItemGroup>
 
     <ItemGroup>
