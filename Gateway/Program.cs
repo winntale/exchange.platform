@@ -1,4 +1,5 @@
 using exchange.platform.binance;
+using exchange.platform.clients.abstractions.Providers;
 using exchange.platform.Configurations;
 using exchange.platform.core;
 
@@ -22,14 +23,6 @@ builder.Services.ConfigureSwaggerServices();
 var app = builder.Build();
 
 app.Services.ValidateMapperProfiles();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
 
 // swagger
 app.ConfigureSwaggerPipeline();
