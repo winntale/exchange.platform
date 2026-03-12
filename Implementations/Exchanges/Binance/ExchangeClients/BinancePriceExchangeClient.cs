@@ -8,17 +8,15 @@ namespace exchange.platform.binance.ExchangeClients;
 
 internal sealed class BinancePriceExchangeClient(IHttpClientFactory httpClientFactory) : IPriceExchangeClient
 {
-    public async Task<decimal?> GetPriceQueryAsync(GetPriceExchangeModel model, CancellationToken ct)
+    public async Task<PriceExchangeModel?> GetPriceQueryAsync(GetPriceExchangeModel getPriceModel, CancellationToken ct)
     {
         var client = httpClientFactory.CreateClient("Binance");
         
-        var response = await client.GetAsync($"/api/v3/ticker/price?symbol={model.Symbol}", ct);
+        var response = await client.GetAsync($"/api/v3/ticker/price?symbol={getPriceModel.Symbol}", ct);
         response.EnsureSuccessStatusCode();
         
         var binanceModel = await response.Content.ReadFromJsonAsync<PriceExchangeModel>(cancellationToken: ct);
-
-        var price = binanceModel?.Price;
         
-        return price;
+        return binanceModel;
     }
 }

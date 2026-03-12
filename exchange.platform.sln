@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dal", "Implementations\Dal\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exchanges", "Exchanges", "{D3A8BCBF-0EA3-4718-80F7-7B91DCE487A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{36751F79-882D-49CD-8987-8839C06F9764}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3BFC3C0-F0E4-40AE-85BA-53B9C985ED98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36751F79-882D-49CD-8987-8839C06F9764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36751F79-882D-49CD-8987-8839C06F9764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36751F79-882D-49CD-8987-8839C06F9764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36751F79-882D-49CD-8987-8839C06F9764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CD11713C-14F7-42E1-A39C-51F2B5B17192} = {D5A9465E-0F2B-4D37-BE26-5B17CEA5E9B4}

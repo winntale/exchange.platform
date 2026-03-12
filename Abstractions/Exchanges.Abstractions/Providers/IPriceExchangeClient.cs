@@ -4,5 +4,5 @@ namespace exchange.platform.clients.abstractions.Providers;
 
 public interface IPriceExchangeClient
 {
-    Task<decimal?> GetPriceQueryAsync(GetPriceExchangeModel symbol, CancellationToken ct);
+    Task<PriceExchangeModel?> GetPriceQueryAsync(GetPriceExchangeModel getPriceModel, CancellationToken ct);
 }
