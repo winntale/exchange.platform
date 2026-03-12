@@ -21,6 +21,7 @@ public sealed class CoreWithTestClientFixture : IDisposable
         services.ConfigureCoreServices();
         
         services.AddKeyedTransient<IPriceExchangeClient, TestPriceExchangeClient>("TestExchangeClient");
+        services.AddKeyedTransient<IPriceExchangeClient, NullPriceExchangeClient>("NullExchangeClient");
         
         ServiceProvider = services.BuildServiceProvider();
 

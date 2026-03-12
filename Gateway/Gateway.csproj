@@ -8,6 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <InternalsVisibleTo Include="Tests" />
       <ProjectReference Include="..\Implementations\Core\Core.csproj" />
       <ProjectReference Include="..\Implementations\Dal\Dal.csproj" />
       <ProjectReference Include="..\Implementations\Exchanges\Binance\Binance.csproj" />
